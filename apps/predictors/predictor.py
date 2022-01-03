@@ -1,9 +1,10 @@
 import streamlit as st
 from apps.predictors.laptopPrice.laptopPrice import laptopMain
 
+from apps.predictors.iplPredict.iplPredict import iplWin
 def app():
     #home menu
-    menu=["Laptop Price Predictor","Employer Salary Predictor"]
+    menu=["Laptop Price Predictor","Ipl Winner Probability Predictor"]
 
     choice = st.sidebar.selectbox("Different Analysis List",menu)
 
@@ -15,4 +16,4 @@ def ChoiceMenu(choice,menu):
         laptopMain()
     
     elif choice == menu[1]:
-        pass
+        iplWin()
