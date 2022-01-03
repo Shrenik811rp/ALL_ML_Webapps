@@ -137,7 +137,7 @@ def ml():
 		input = np.array(result).reshape(1,-1)
 		#st.write(input)
 
-		m = joblib.load("apps/heartDisease/rf_model")
+		m = joblib.load("apps/healthcare/heartDisease/rf_model")
 
 		prediction = m.predict(input)
 		st.write(prediction)

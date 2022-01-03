@@ -1,7 +1,8 @@
-#importing eda module for heart disease
-from apps.Diabetes_pred.edaDiab import eda
 
-from apps.Diabetes_pred.mlDiab import ml
+#importing eda module for heart disease
+from apps.healthcare.heartDisease.eda import eda
+
+from apps.healthcare.heartDisease.ml import ml
 
 
 #importing required general modules
@@ -9,30 +10,31 @@ import streamlit as st
 import pandas as pd
 import time
 
-
-
-def app():
+#main app function
+def Heartapp():
+    
     #home menu
-    menu=["Diabetes Home","Exploratory Data Analysis Section", "Prediction Section","About"]
+    menu=["Heart Disease Home","Exploratory Data Analysis Section", "Prediction Section"]
 
     choice = st.sidebar.selectbox("Menu",menu)
 
-    ChoiceMenu(choice,menu)
+    ChoiceMenu(choice)
+
 
 
 #choice selection function
-def ChoiceMenu(choice,menu):
+def ChoiceMenu(choice):
 
 
     #calling required function based on user input
-    if choice == menu[0]:
+    if choice == "Heart Disease Home":
 
         #display info on home page
-        st.title('Diabetes Prediction App')
-        st.header("Diabetes Home Page")
+        st.title('Heart Disease App')
+        st.header("Heart Disease Home Page")
 
 
-    elif choice == menu[1]:
+    elif choice == "Exploratory Data Analysis Section":
 
         #display eda info
         st.header("Exploratory Data Analysis Section") 
@@ -41,14 +43,12 @@ def ChoiceMenu(choice,menu):
         eda()
 
 
-    elif choice == menu[2]:
+    else:
 
         #display model predictions
         st.header("Prediction Section") 
-        st.subheader("Please enter patient data:")
         ml() 
 
 
-    else:
-        st.header("About Page") 
+    
     

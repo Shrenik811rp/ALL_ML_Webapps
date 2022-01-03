@@ -26,7 +26,7 @@ def EdaChoice(df):
     submenu = ["Descriptive","Plots"]
 
     #getting user input for choice
-    choice = st.sidebar.selectbox("Submenu",submenu)
+    choice = st.sidebar.selectbox("Sub-Menu",submenu)
 
 
     if choice == "Descriptive":
